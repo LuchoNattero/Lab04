@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.utn.frsf.isi.dam.reclamosonlinelab04.modelo.Estado;
-import ar.edu.utn.frsf.isi.dam.reclamosonlinelab04.modelo.Reclamo;
 import ar.edu.utn.frsf.isi.dam.reclamosonlinelab04.modelo.TipoReclamo;
 
 /**
@@ -19,7 +18,7 @@ public class ReclamoDaoHTTP implements ReclamoDao {
 
     private List<TipoReclamo> tiposReclamos = null;
     private List<Estado> tiposEstados = null;
-    private List<Reclamo> listaReclamos = null;
+    private List<Estado.Reclamo> listaReclamos = null;
     private String server;
     private MyGenericHTTPClient cliente;
 
@@ -71,14 +70,14 @@ public class ReclamoDaoHTTP implements ReclamoDao {
     }
 
     @Override
-    public List<Reclamo> reclamos() {
+    public List<Estado.Reclamo> reclamos() {
         listaReclamos = new ArrayList<>();
         String reclamosJSON = cliente.getAll("reclamo");
         try {
             JSONArray arr = new JSONArray(reclamosJSON);
             for(int i=0;i<arr.length();i++){
                 JSONObject unaFila = arr.getJSONObject(i);
-                Reclamo recTmp = new Reclamo();
+                Estado.Reclamo recTmp = new Estado.Reclamo();
                 recTmp.setId(unaFila.getInt("id"));
                 recTmp.setTitulo(unaFila.getString("titulo"));
                 recTmp.setTipo(this.getTipoReclamoById(unaFila.getInt("tipoId")));
@@ -130,17 +129,17 @@ public class ReclamoDaoHTTP implements ReclamoDao {
     }
 
     @Override
-    public void crear(Reclamo r) {
+    public void crear(Estado.Reclamo r) {
 
     }
 
     @Override
-    public void actualizar(Reclamo r) {
+    public void actualizar(Estado.Reclamo r) {
 
     }
 
     @Override
-    public void borrar(Reclamo r) {
+    public void borrar(Estado.Reclamo r) {
 
     }
 }

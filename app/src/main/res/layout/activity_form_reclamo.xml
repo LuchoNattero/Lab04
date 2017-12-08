@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,104 +7,131 @@
     android:orientation="vertical"
     tools:context="ar.edu.utn.frsf.isi.dam.reclamosonlinelab04.FormReclamo">
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="NUEVO RECLAMO"
-        android:id="@+id/frmReclamoTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:text="Titulo"
-        android:id="@+id/frmReclamoLblReclamo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:id="@+id/frmReclamoTextReclamo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:text="Detalle"
-        android:id="@+id/frmReclamoLblDetReclamo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:id="@+id/frmReclamoTextDetReclamo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:text="Lugar"
-        android:id="@+id/frmReclamoLblLugar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <EditText
-            android:id="@+id/frmReclamoTextLugar"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:text="Elegir Lugar"
-            android:id="@+id/elegirLugar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <TextView
-        android:text="Tipo Reclamo"
-        android:id="@+id/frmReclamoLblTipo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Spinner
-        android:id="@+id/frmReclamoCmbTipo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:text="Foto"
-        android:id="@+id/frmReclamoLblFoto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <ImageView
-        android:id="@+id/frmReclamoImgFoto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/frmReclamoLblAudio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <Button
-            android:text="Grabar Audio"
-            android:id="@+id/frmReclamoRecAudio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:text="Reproducir Audio"
-            android:id="@+id/frmReclamoPlayAudio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <Button
-            android:text="Guardar"
-            android:id="@+id/frmReclamoGuardar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:text="Eliminar"
-            android:id="@+id/frmReclamoEliminar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:text="Cancelar"
-            android:id="@+id/frmReclamoCancelar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+        android:id="@+id/tv_nuevo_reclamo"/>
 
-</LinearLayout>
+    <TextView
+        android:layout_below="@+id/tv_nuevo_reclamo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Titulo"
+        android:id="@+id/tv_titulo"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_titulo"
+        android:layout_below="@+id/tv_titulo"/>
+
+    <TextView
+        android:layout_below="@+id/et_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detalle"
+        android:id="@+id/tv_detalle"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_detalle"
+        android:layout_below="@+id/tv_detalle"/>
+
+    <TextView
+        android:layout_below="@+id/et_detalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lugar"
+        android:id="@+id/tv_lugar"
+        />
+    <RelativeLayout
+        android:layout_below="@+id/tv_lugar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_lugar"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_lugar"
+            android:layout_toLeftOf="@+id/bt_elegir_lugar"
+            />
+        <Button
+            android:layout_alignParentRight="true"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ELEGIR LUGAR"
+            android:id="@+id/bt_elegir_lugar"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@+id/rl_lugar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_tipo"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tipo Reclamo"
+            android:id="@+id/tv_tipo"
+            />
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Foto"
+        android:id="@+id/tv_foto"
+        android:layout_below="@+id/rl_tipo"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_foto"
+        android:id="@+id/rl_audio"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GRABAR AUDIO"
+            android:id="@+id/bt_grabar_audio"/>
+        <Button
+            android:layout_toRightOf="@id/bt_grabar_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REPRODUCIR AUDIO"
+            android:id="@+id/bt_repro_audio"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_audio">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GUARDAR"
+            android:id="@+id/bt_guardar"/>
+        <Button
+            android:layout_toRightOf="@id/bt_guardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ELIMINAR"
+            android:id="@+id/bt_eliminar"/>
+        <Button
+            android:layout_toRightOf="@id/bt_eliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CANCELAR"
+            android:id="@+id/bt_cancelar"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

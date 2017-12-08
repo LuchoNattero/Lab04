@@ -1,6 +1,8 @@
 package ar.edu.utn.frsf.isi.dam.reclamosonlinelab04.modelo;
 
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.Date;
 
 /**
@@ -13,7 +15,7 @@ public class Reclamo {
     private String detalle;
     private Date fecha;
     private TipoReclamo tipo;
-
+    private LatLng lugar;
     private Estado estado;
 
 
@@ -22,13 +24,22 @@ public class Reclamo {
     public Reclamo() {
     }
 
-    public Reclamo(Integer id, String titulo, String detalle, Date fecha, TipoReclamo tipo, Estado estado) {
+    public Reclamo(Integer id, String titulo, String detalle, Date fecha, TipoReclamo tipo, Estado estado, LatLng latLng) {
         this.id = id;
         this.titulo = titulo;
         this.detalle = detalle;
         this.fecha = fecha;
         this.tipo = tipo;
         this.estado = estado;
+        this.lugar = latLng;
+    }
+
+    public LatLng getLugar() {
+        return lugar;
+    }
+
+    public void setLugar(LatLng lugar) {
+        this.lugar = lugar;
     }
 
     public Integer getId() {

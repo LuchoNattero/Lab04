@@ -9,17 +9,17 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import ar.edu.utn.frsf.isi.dam.reclamosonlinelab04.modelo.Reclamo;
+import ar.edu.utn.frsf.isi.dam.reclamosonlinelab04.modelo.Estado;
 
 /**
  * Created by martdominguez on 26/10/17.
  */
 
-public class ReclamoAdapter extends ArrayAdapter<Reclamo> {
+public class ReclamoAdapter extends ArrayAdapter<Estado.Reclamo> {
 
     private LayoutInflater layoutInflater;
 
-    public ReclamoAdapter(Context ctx, List<Reclamo> lista) {
+    public ReclamoAdapter(Context ctx, List<Estado.Reclamo> lista) {
         super(ctx, 0, lista);
         layoutInflater = LayoutInflater.from(ctx);
     }
@@ -32,7 +32,7 @@ public class ReclamoAdapter extends ArrayAdapter<Reclamo> {
         TextView tvNombre = (TextView) filaNueva.findViewById(R.id.lvReclamoTitulo);
         TextView tvTipoReclamo = (TextView) filaNueva.findViewById(R.id.lvReclamoTipo);
         TextView tvEstado = (TextView) filaNueva.findViewById(R.id.lvReclamoEstado);
-        Reclamo reclamo = getItem(position);
+        Estado.Reclamo reclamo = getItem(position);
         tvNombre.setText(reclamo.getTitulo());
         tvTipoReclamo.setText(reclamo.getTipo().getTipo());
         tvEstado.setText(reclamo.getEstado().getTipo());
