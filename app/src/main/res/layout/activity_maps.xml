@@ -5,4 +5,20 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ar.edu.utn.frsf.isi.dam.reclamosonlinelab04.MapsActivity" />
+    map:cameraBearing="0"
+    map:cameraTargetLat="31.42"
+    map:cameraTargetLng="60.46"
+
+    map:cameraZoom="13"
+    map:mapType="normal"
+
+    map:uiCompass="true"
+    map:uiRotateGestures="true"
+    map:uiTiltGestures="true"
+    map:uiZoomControls="true"
+    map:uiZoomGestures="true"
+    tools:context="ar.edu.utn.frsf.isi.dam.reclamosonlinelab04.MapsActivity"
+
+
+
+    />
